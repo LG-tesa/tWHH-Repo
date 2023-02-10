@@ -1,18 +1,19 @@
-- name: Using a REST API
+---
+- name: uri module demo
+  hosts: all
   become: false
-  hosts: localhost
-    vars:
-      ansible_host_key_checking: false
-  gather_facts: false
+  vars:
+    server: "https://10.128.88.10:9000"
+    endpoint: "/auth"
   tasks:
-    - debug:
-        msg: “Let’s call an API”
-
-    - name: Everyone loves a good Chuck Norris joke
-      uri:
-        url: http://10.128.88.10:9000/auth
+    - name: list users
+      ansible.builtin.uri:
+        url: "{{ server }}{{ endpoint }}"
         method: GET
-      register: results
+        status_code: 200
+        timeout: 30
+      register: result
 
-    - debug:
-        var: results.json.value
+    - name: debug
+      ansible.builtin.debug:
+        var: result.json.data
