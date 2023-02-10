@@ -1,3 +1,5 @@
+- name: Update web servers
+  hosts: all
 tasks:
 - name: Everyone loves a good Chuck Norris joke
   uri:
