@@ -1,20 +1,19 @@
----
 - name: Using a REST API
   become: false
-  hosts: localhost
+  hosts: 10.128.88.10
   gather_facts: false
   tasks:
     - debug:
         msg: “Let’s call an API”
 
-- name: Login to an API
-  uri:
-    url: 10.128.88.10:9000/api/stacks?method=repository&type=1&endpointId=1
-    method: POST
-    body_format: json
-    body:
-      Authorization: "Bearer ptr_sY8k6lKixEFy3rJ/2P5cnxoGJmqdohC6jm9HaJEc1l4="
-      Name: "myTestStack"
-      SwarmID: "k427pd86wfkgp40ksrmbojrwq"
-      RepositoryURL: "https://github.com/portainer/templates"
-      ComposeFilePathInRepository: "stacks/cockroachdb/docker-stack.yml"
+    - name: Everyone loves a good Chuck Norris joke
+      uri:
+        url: 10.128.88.10:9000/api/stacks?method=repository&type=1&endpointId=1
+        method: POST
+        body_format: json
+        body:
+          Authorization: "Bearer ptr_sY8k6lKixEFy3rJ/2P5cnxoGJmqdohC6jm9HaJEc1l4="
+          Name: "myTestStack"
+          SwarmID: "k427pd86wfkgp40ksrmbojrwq"
+          RepositoryURL: "https://github.com/portainer/templates"
+          ComposeFilePathInRepository: "stacks/cockroachdb/docker-stack.yml"
