@@ -17,9 +17,9 @@
     method: POST
     body_format: json
     body:
-      name: {{ vault_portainer_user }}
-      password: {{ vault_user_password }}
-      client_id: YOUR_CLIENT_ID
-      access_token: ACCESS_TOKEN
-      connection: CONNECTION
-      scope: SCOPE
+      name: "{{ vault_portainer_user }}"
+      password: "{{ vault_user_password }}"
+      client_id: "YOUR_CLIENT_ID"
+      access_token: "ACCESS_TOKEN"
+      connection: "CONNECTION"
+      scope: "SCOPE"
