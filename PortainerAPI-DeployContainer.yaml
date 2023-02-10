@@ -1,3 +1,25 @@
+  - name: Gather stored entitlement from repository service
+    local_action:
+      module: uri
+      url: "10.128.88.10:9000/api"
+      method: GET
+      url_username: "{{ ansible_user }}"
+      url_password: "{{ ansible_password }}"
+      validate_certs: yes
+      return_content: yes
+      status_code: 200
+      body_format: json
+    check_mode: false
+    register: result
+
+  - name: Show result
+    debug:
+      msg: "{{ result.json }}"
+    check_mode: false
+
+
+
+
 - name: Using a REST API
   become: false
   gather_facts: false
