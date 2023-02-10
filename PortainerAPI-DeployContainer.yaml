@@ -1,4 +1,3 @@
----
 - name: Using a REST API
   become: false
   hosts: localhost
