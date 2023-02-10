@@ -1,6 +1,6 @@
 - name: Using a REST API
   become: false
-  hosts: localhost
+  hosts: 10.128.88.10
   gather_facts: false
   tasks:
     - debug:
