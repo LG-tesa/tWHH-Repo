@@ -1,6 +1,6 @@
 - name: Using a REST API
   become: false
-  hosts: 10.128.88.10
+  hosts: 10.128.88.10:9000
   gather_facts: false
   tasks:
     - debug:
