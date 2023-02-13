@@ -6,10 +6,10 @@
     - debug:
         msg: “Let’s call an API”
     - uri: 
+        method: POST
         url: http://10.128.88.10:9443/auth/
-        method: PUT
-        user: "TEST"
-        password: "TEST"
+        url_password: "TEST"
+        url_password: "TEST"
         return_content: yes
         body: {"configure":".*","write":".*","read":".*"}
         body_format: json
