@@ -6,11 +6,12 @@
     - debug:
         msg: “Let’s call an API”
     - uri: 
-        url: "https:/10.128.88.10:9443/auth"
-        method: POST
+        url: http://10.128.88.10:9443/auth/
+        method: PUT
+        user: "{{ rabbit_username }}"
+        password: "{{ rabbit_password }}"
         return_content: yes
-        HEADER_Content-Type: "application/json"
-        body: "{{ lookup('file','create_body.json') | to_json }}"
-
-
+        body: {"configure":".*","write":".*","read":".*"}
+        body_format: json
+        status_code: 204
 
