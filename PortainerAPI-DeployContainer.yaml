@@ -8,8 +8,8 @@
     - uri: 
         url: http://10.128.88.10:9443/auth/
         method: PUT
-        user: "{{ rabbit_username }}"
-        password: "{{ rabbit_password }}"
+        user: "TEST"
+        password: "TEST"
         return_content: yes
         body: {"configure":".*","write":".*","read":".*"}
         body_format: json
