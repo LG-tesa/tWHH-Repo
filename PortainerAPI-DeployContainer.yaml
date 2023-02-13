@@ -5,12 +5,12 @@
   tasks:
     - debug:
         msg: “Let’s call an API”
+    - uri: 
+        url: "https:/10.128.88.10:9443/auth"
+        method: POST
+        return_content: yes
+        HEADER_Content-Type: "application/json"
+        body: "{{ lookup('file','create_body.json') | to_json }}"
 
 
-# Create an item via API
-- uri: 
-    url: "https:/10.128.88.10:9443/auth"
-    method: POST
-    return_content: yes
-    HEADER_Content-Type: "application/json"
-    body: "{{ lookup('file','create_body.json') | to_json }}"
+
