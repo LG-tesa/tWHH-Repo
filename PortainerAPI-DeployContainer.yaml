@@ -14,4 +14,9 @@
                 "username": "{{PortainerUser_Account}}"}
         body_format: json
         status_code: 204
+      register: result
+      until: result.json.status == "UP"
+      retries: 10
+      delay: 30
+
 
