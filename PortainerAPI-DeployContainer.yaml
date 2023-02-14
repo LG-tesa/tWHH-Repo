@@ -7,11 +7,11 @@
         msg: “Let’s call an API”
     - uri: 
         method: POST
-        url: http://10.128.88.10:9443/auth/
-        url_password: "TEST"
-        url_password: "TEST"
+        url: https://10.128.88.10:9443/auth/
         return_content: yes
-        body: {"configure":".*","write":".*","read":".*"}
+        body: {
+                "password": "PortainerUser_Password",
+                "username": "{{PortainerUser_Account}}"}
         body_format: json
         status_code: 204
 
