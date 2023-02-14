@@ -7,7 +7,7 @@
         msg: “Let’s call an API”
     - uri: 
         method: POST
-        url: https://10.128.88.10:9443/auth/
+        url: https://S-600-ITx-050.tphh.corp:9443/auth/
         return_content: yes
         body: {
                 "password": "PortainerUser_Password",
